@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bater Ponto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Bater Ponto</h1>
+        <p class="lead">Registre seus horários de forma simples</p>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container text-center">
+        <section id="ponto-section" class="my-5">
+            <h2 id="etapa-titulo">Bater Ponto - Entrada</h2>
+            <button class="btn btn-primary btn-lg" id="bater-ponto-btn" onclick="proximaEtapa()">Bater Ponto</button>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Controle de Horas - Todos os Direitos Reservados</p>
+    </footer>
+
+    <script>
+        let etapaAtual = 0;
+        const etapas = ["Entrada", "Saída para Almoço", "Volta do Almoço", "Fim do Expediente"];
+
+        function proximaEtapa() {
+            const titulo = document.getElementById('etapa-titulo');
+            const btn = document.getElementById('bater-ponto-btn');
+
+            const agora = new Date();
+            const horario = `${agora.getHours().toString().padStart(2, '0')}:${agora.getMinutes().toString().padStart(2, '0')}`;
+            alert(`Ponto registrado para ${etapas[etapaAtual]} às ${horario}`);
+
+            etapaAtual++;
+
+            if (etapaAtual < etapas.length) {
+                titulo.textContent = `Bater Ponto - ${etapas[etapaAtual]}`;
+            } else {
+                titulo.textContent = "Ponto Completo!";
+                btn.disabled = true;
+                btn.textContent = "Todos os pontos registrados";
+            }
+        }
+    </script>
+</body>
+</html>
