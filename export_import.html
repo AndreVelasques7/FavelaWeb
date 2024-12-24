@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favela Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Favela Web</h1>
+        <p class="lead">Controle Local de Dados</p>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Exportar Dados</h2>
+                <button class="btn btn-success w-100 mb-3">Exportar JSON</button>
+                <button class="btn btn-info w-100 mb-3">Exportar CSV</button>
+            </div>
+            <div class="col-md-6">
+                <h2>Importar Dados</h2>
+                <label for="importJson" class="form-label">Importar JSON</label>
+                <input type="file" id="importJson" class="form-control mb-3">
+                <label for="importCsv" class="form-label">Importar CSV</label>
+                <input type="file" id="importCsv" class="form-control">
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Favela Web - Todos os Direitos Reservados</p>
+    </footer>
+</body>
+
+</html>
